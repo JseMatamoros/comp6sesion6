@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>Libros con valoracion mayor a 1500</h1>
+        <ul>
+            {% for book in books_value %}
+                <li>Titulo: {{ book.titulo }}, Autor: {{ book.autor }}, Valoracion: {{ book.valoracion }}</li>
+            {% empty %}
+                <li>No top rated books found.</li>
+            {% endfor %}
+        </ul>
+
+        <h1>Listado con todos los libros:</h1>
+        <ul>
+            {% for book in books %}
+                <li>Titulo: {{ book.titulo }}, Autor: {{ book.autor }}</li>
+            {% empty %}
+                <li>No books found.</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
